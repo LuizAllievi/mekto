@@ -1,0 +1,1 @@
+ C:\\Users\\Luiz\\git\\mekto\\.dart_tool\\flutter_build\\5c17305f30dfef38251a425fe94d704b\\native_assets.yaml: 
