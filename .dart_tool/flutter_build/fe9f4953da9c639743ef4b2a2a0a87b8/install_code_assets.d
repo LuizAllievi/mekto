@@ -1,0 +1,1 @@
+ /Users/luizallievi/git/mekto/.dart_tool/flutter_build/fe9f4953da9c639743ef4b2a2a0a87b8/native_assets.json: 
