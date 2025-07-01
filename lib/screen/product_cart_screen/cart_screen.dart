@@ -1,3 +1,4 @@
+import 'package:intl/intl.dart';
 
 import 'provider/cart_provider.dart';
 import '../../utility/extensions.dart';
@@ -18,10 +19,14 @@ class CartScreen extends StatelessWidget {
       context.cartProvider.getCartItems();
     });
     return Scaffold(
+      backgroundColor: AppColor.platinado,
       appBar: AppBar(
         title: const Text(
           "Meu Carrinho",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppColor.darkOrange),
+          style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: AppColor.darkOrange),
         ),
       ),
       body: Consumer<CartProvider>(
@@ -34,7 +39,8 @@ class CartScreen extends StatelessWidget {
                   ? const EmptyCart()
                   : Consumer<CartProvider>(
                       builder: (context, cartProvider, child) {
-                        return CartListSection(cartProducts: cartProvider.myCartItems);
+                        return CartListSection(
+                            cartProducts: cartProvider.myCartItems);
                       },
                     ),
 
@@ -46,12 +52,15 @@ class CartScreen extends StatelessWidget {
                   children: [
                     const Text(
                       "Total",
-                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w900,
+                          color: AppColor.darkOrange),
                     ),
                     AnimatedSwitcherWrapper(
                       child: Text(
-                        'R\$ ${context.cartProvider.getCartSubTotal()}',
-                        // key: ValueKey<double>(cartProvider.getCartSubTotal()),
+                        NumberFormat.simpleCurrency(locale: 'pt_BR')
+                            .format(context.cartProvider.getCartSubTotal()),
                         style: const TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w900,
@@ -66,15 +75,18 @@ class CartScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 30, bottom: 20),
+                  padding:
+                      const EdgeInsets.only(left: 30, right: 30, bottom: 20),
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(padding: const EdgeInsets.all(20)),
+                    style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(20)),
                     onPressed: context.cartProvider.myCartItems.isEmpty
                         ? null
                         : () {
-                      showCustomBottomSheet(context);
-                    },
-                    child: const Text("Comprar Agora", style: TextStyle(color: Colors.white)),
+                            showCustomBottomSheet(context);
+                          },
+                    child: const Text("Comprar Agora",
+                        style: TextStyle(color: Colors.white)),
                   ),
                 ),
               )
@@ -82,7 +94,6 @@ class CartScreen extends StatelessWidget {
               //? total price section
 
               //? buy now button
-
             ],
           );
         },

@@ -23,4 +23,6 @@ class AppColor {
 
   static const darkGrey = Color(0x5F868686);
   static const lightGrey = Color(0x5FD9D9D9);
+
+  static const branco = Color.fromARGB(255, 255, 254, 254);
 }

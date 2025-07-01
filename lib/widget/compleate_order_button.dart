@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mekto/utility/app_color.dart';
 
 class CompleteOrderButton extends StatelessWidget {
   final String? labelText;
@@ -6,7 +7,8 @@ class CompleteOrderButton extends StatelessWidget {
 
   const CompleteOrderButton({
     super.key,
-    this.onPressed, this.labelText,
+    this.onPressed,
+    this.labelText,
   });
 
   @override
@@ -18,16 +20,17 @@ class CompleteOrderButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           elevation: 2,
           foregroundColor: Colors.white,
-          backgroundColor: Colors.green,
+          backgroundColor: AppColor.halloween,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         ),
         onPressed: onPressed,
-        child:  Text(
+        child: Text(
           labelText ?? 'Complete Order',
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
     );

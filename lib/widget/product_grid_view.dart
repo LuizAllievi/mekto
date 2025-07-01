@@ -109,16 +109,6 @@ class _ProductGridViewState extends State<ProductGridView> {
                         "Top Produtos",
                         style: Theme.of(context).textTheme.headlineMedium,
                       ),
-                      // if (widget.loadHome) const SizedBox(height: 5),
-                      // if (widget.loadHome)
-                      //   Consumer<DataProvider>(
-                      //     builder: (context, dataProvider, child) {
-                      //       return CategorySelector(
-                      //         categories: dataProvider.categories,
-                      //       );
-                      //     },
-                      //   ),
-
                       AnimatedBuilder(
                           animation: productListProvider,
                           builder: (context, snapshot) {

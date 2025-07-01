@@ -1,3 +1,4 @@
+import 'package:intl/intl.dart';
 import 'package:mekto/main.dart';
 import 'package:mekto/utility/app_color.dart';
 import 'package:mekto/utility/extensions.dart';
@@ -69,15 +70,18 @@ class ProductDetailScreen extends StatelessWidget {
                         children: [
                           Text(
                             product.offerPrice != null
-                                ? "R\$ ${product.offerPrice}"
-                                : "R\$ ${product.price}",
+                                ? NumberFormat.simpleCurrency(locale: 'pt_BR')
+                                    .format(product.offerPrice)
+                                : NumberFormat.simpleCurrency(locale: 'pt_BR')
+                                    .format(product.price),
                             style: Theme.of(context).textTheme.displayLarge,
                           ),
                           const SizedBox(width: 3),
                           Visibility(
                             visible: product.offerPrice != product.price,
                             child: Text(
-                              "R\$ ${product.price}",
+                              NumberFormat.simpleCurrency(locale: 'pt_BR')
+                                  .format(product.price),
                               style: const TextStyle(
                                 decoration: TextDecoration.lineThrough,
                                 color: Colors.grey,
