@@ -1,0 +1,1 @@
+ /Users/luizallievi/git/mekto/mekto/.dart_tool/flutter_build/49d962bb0e29e3f8f95469f5a4c59738/dart_build_result.json: 
