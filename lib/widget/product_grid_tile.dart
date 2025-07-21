@@ -80,22 +80,22 @@ class ProductGridTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Nome da empresa com overflow ellipsis e uma fonte menor
-              FittedBox(
-                child: Text(
-                  product.companyName ?? '',
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w300, // Deixar mais leve
-                    color: Colors.grey,
-                    fontSize: 9, // Reduzido para caber bem
-                  ),
-                ),
-              ),
-              const SizedBox(
-                  height:
-                      4), // Um espacinho entre o nome da empresa e o produto
+              // // Nome da empresa com overflow ellipsis e uma fonte menor
+              // FittedBox(
+              //   child: Text(
+              //     product.companyName ?? '',
+              //     overflow: TextOverflow.ellipsis,
+              //     maxLines: 1,
+              //     style: const TextStyle(
+              //       fontWeight: FontWeight.w300, // Deixar mais leve
+              //       color: Colors.grey,
+              //       fontSize: 9, // Reduzido para caber bem
+              //     ),
+              //   ),
+              // ),
+              // const SizedBox(
+              //     height:
+              //         4), // Um espacinho entre o nome da empresa e o produto
 
               // Nome do produto com uma abordagem mais fluida
               Text(
@@ -156,7 +156,7 @@ class ProductGridTile extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.fromLTRB(10, 0, 10, 80),
         decoration: BoxDecoration(
-          color: AppColor.areia,
+          color: AppColor.platinado,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Center(

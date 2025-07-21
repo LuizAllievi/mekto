@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mekto/main.dart';
 import 'package:mekto/screen/product_favorite_screen/provider/favorite_provider.dart';
 import 'package:mekto/screen/product_list_screen/provider/product_list_provider.dart';
+import 'package:mekto/utility/app_color.dart';
 import 'package:mekto/utility/extensions.dart';
 import 'package:provider/provider.dart';
 
@@ -95,20 +96,22 @@ class _ProductGridViewState extends State<ProductGridView> {
                           style: const TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 20,
-                              color: Colors.white),
+                              color: AppColor.pretoAssombroso),
                           //               ),
                         ),
                       if (widget.loadHome)
                         Text(
                           "Qual peça você precisa hoje?",
-                          style: const TextStyle(fontWeight: FontWeight.w600),
+                          style: const TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: AppColor.branco),
                         ),
-                      if (widget.loadHome) const PosterSection(),
-                      if (widget.loadHome) const SizedBox(height: 5),
-                      Text(
-                        "Top Produtos",
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
+                      // if (widget.loadHome) const PosterSection(),
+                      // if (widget.loadHome) const SizedBox(height: 5),
+                      // Text(
+                      //   "Top Produtos",
+                      //   style: Theme.of(context).textTheme.headlineMedium,
+                      // ),
                       AnimatedBuilder(
                           animation: productListProvider,
                           builder: (context, snapshot) {

@@ -28,7 +28,7 @@ class CartListSection extends StatelessWidget {
               margin: const EdgeInsets.all(8), // reduzido
               padding: const EdgeInsets.all(10), // reduzido
               decoration: BoxDecoration(
-                color: AppColor.areia,
+                color: AppColor.platinado,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(

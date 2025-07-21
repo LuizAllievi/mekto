@@ -19,14 +19,14 @@ class CartScreen extends StatelessWidget {
       context.cartProvider.getCartItems();
     });
     return Scaffold(
-      backgroundColor: AppColor.platinado,
+      backgroundColor: AppColor.halloween,
       appBar: AppBar(
         title: const Text(
           "Meu Carrinho",
           style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: AppColor.darkOrange),
+              color: AppColor.branco),
         ),
       ),
       body: Consumer<CartProvider>(
@@ -55,7 +55,7 @@ class CartScreen extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.w900,
-                          color: AppColor.darkOrange),
+                          color: AppColor.branco),
                     ),
                     AnimatedSwitcherWrapper(
                       child: Text(
@@ -64,7 +64,7 @@ class CartScreen extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w900,
-                          color: AppColor.darkOrange,
+                          color: AppColor.branco,
                         ),
                       ),
                     )
@@ -79,14 +79,15 @@ class CartScreen extends StatelessWidget {
                       const EdgeInsets.only(left: 30, right: 30, bottom: 20),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.all(20)),
+                        padding: const EdgeInsets.all(20),
+                        backgroundColor: AppColor.branco),
                     onPressed: context.cartProvider.myCartItems.isEmpty
                         ? null
                         : () {
                             showCustomBottomSheet(context);
                           },
                     child: const Text("Comprar Agora",
-                        style: TextStyle(color: Colors.white)),
+                        style: TextStyle(color: AppColor.halloween)),
                   ),
                 ),
               )

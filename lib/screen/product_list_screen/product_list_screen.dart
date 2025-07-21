@@ -18,58 +18,9 @@ class ProductListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
         appBar: const CustomAppBar(),
-        backgroundColor: AppColor.pessego,
+        backgroundColor: AppColor.halloween,
         body: const Padding(
             padding: const EdgeInsets.all(20),
             child: const ProductGridView(loadHome: true)));
   }
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     extendBodyBehindAppBar: true,
-  //     appBar: const CustomAppBar(),
-  //     body: SafeArea(
-//   //       child: SingleChildScrollView(
-//   //         child: Padding(
-  //           padding: const EdgeInsets.all(20),
-  //           child: Column(
-  //             crossAxisAlignment: CrossAxisAlignment.start,
-  //             children: [
-  //               Text(
-  //                 "Olá, " +( context.userProvider.getLoginUsr()?.name ?? ''),
-  //                 style: Theme.of(context).textTheme.displayLarge,
-  //               ),
-  //               Text(
-  //                 "Qual peça você precisa hoje?",
-  //                 style: Theme.of(context).textTheme.headlineSmall,
-  //               ),
-  //               const PosterSection(),
-  //               Text(
-  //                 "Top Categorias",
-  //                 style: Theme.of(context).textTheme.headlineMedium,
-  //               ),
-  //               const SizedBox(height: 5),
-  //               Consumer<DataProvider>(
-  //                 builder: (context, dataProvider, child) {
-  //                   return CategorySelector(
-  //                     categories: dataProvider.categories,
-  //                   );
-  //                 },
-  //               ),
-  //               Consumer<DataProvider>(
-  //                 builder: (context, dataProvider, child) {
-  //
-  //                   return ProductGridView(
-  //
-  //
-  //                   );
-  //                 },
-  //               ),
-  //             ],
-  //           ),
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
 }

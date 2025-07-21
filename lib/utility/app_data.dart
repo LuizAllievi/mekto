@@ -32,13 +32,13 @@ class AppData {
     const BottomNavyBarItem(
       "Início",
       Icon(Icons.home),
-      AppColor.abobora,
+      AppColor.halloween,
     ),
-    const BottomNavyBarItem(
-      "Favoritos",
-      Icon(Icons.favorite),
-      AppColor.darkOrange,
-    ),
+    // const BottomNavyBarItem(
+    //   "Favoritos",
+    //   Icon(Icons.favorite),
+    //   AppColor.darkOrange,
+    // ),
     const BottomNavyBarItem(
       "Carrinho",
       Icon(Icons.shopping_cart),
