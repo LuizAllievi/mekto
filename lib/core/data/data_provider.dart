@@ -258,12 +258,6 @@ class DataProvider extends ChangeNotifier {
       List<String> ids = const [],
       int page = 0}) async {
     try {
-      print('api/products/byIdList/' +
-          ids
-              .toString()
-              .replaceAll("[", '')
-              .replaceAll(']', '')
-              .replaceAll(" ", ''));
       Response response = await service.getItems(
           endpointUrl: 'api/products/byIdList/' +
               ids.toString().replaceAll("[", '').replaceAll(']', '') +

@@ -1,12 +1,8 @@
-import 'package:mekto/main.dart';
+import 'package:flutter/material.dart';
 import 'package:mekto/utility/app_color.dart';
 import 'package:mekto/utility/extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:mekto/widget/no_product_found_banner.dart';
-import '../../../models/user.dart';
-import '../../../utility/constants.dart';
-import '../../../widget/app_bar_action_button.dart';
+
 import '../../../widget/custom_search_bar.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -44,7 +40,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               IconButton(
                 icon: const Icon(Icons.help),
-                color: AppColor.branco,
+                color: AppColor.halloween,
+                style: ButtonStyle(iconSize: MaterialStateProperty.all(27.0)),
                 onPressed: () {
                   showDialog(
                     context: context,

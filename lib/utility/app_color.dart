@@ -17,6 +17,7 @@ class AppColor {
   static const taupe = Color(0xFF868686);
   static const prateado = Color(0xFFb1b1b1);
   static const platinado = Color(0xFFd9d9d9);
+  static const platinado2 = Color.fromARGB(255, 238, 237, 237);
 
   static const caramelinho = Color(0xFFfbdd9a);
   static const verdeCha = Color(0xFFc3d5af);

@@ -21,6 +21,15 @@ class HttpService {
     }
   }
 
+  Future<String> getPhoneNumber() async {
+    try {
+      final response = await GetConnect().get('$baseUrl/public/supportNumber');
+      return response.bodyString ?? ''; // ou trate como quiser
+    } catch (e) {
+      return "";
+    }
+  }
+
   Future<Response> getWithoutAuth({required String endpointUrl}) async {
     try {
       return await GetConnect().get('$baseUrl/$endpointUrl');

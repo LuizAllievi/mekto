@@ -39,18 +39,18 @@ class ProductDetailScreen extends StatelessWidget {
               children: [
                 //? product image section
                 Container(
-                  height: height * 0.42,
+                  height: height * 0.36,
                   width: width,
                   decoration: const BoxDecoration(
-                    color: Color(0xFFE5E6E8),
+                    color: AppColor.platinado,
                     borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(200),
-                      bottomLeft: Radius.circular(200),
+                      bottomRight: Radius.circular(0),
+                      bottomLeft: Radius.circular(0),
                     ),
                   ),
                   child: CarouselSlider(items: product.images ?? []),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: Column(
@@ -95,18 +95,18 @@ class ProductDetailScreen extends StatelessWidget {
                         children: [
                           Text(
                             product.quantity != 0
-                                ? "Estoque disponível : ${product.quantity}"
+                                ? "Estoque: ${product.quantity}"
                                 : "Sem estoque",
                             style: const TextStyle(fontWeight: FontWeight.w500),
                           )
                         ],
                       ),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 20),
                       product.proVariantId!.isNotEmpty
                           ? Text(
-                              'Disponível ${product.proVariantTypeId?.type}',
+                              '${product.proVariantTypeId?.type}',
                               style: const TextStyle(
-                                  color: Colors.red, fontSize: 16),
+                                  color: Colors.red, fontSize: 14),
                             )
                           : const SizedBox(),
                       Consumer<ProductDetailProvider>(
@@ -126,7 +126,7 @@ class ProductDetailScreen extends StatelessWidget {
                       ),
                       //? product description
                       Text(
-                        "Sobre",
+                        "Descrição",
                         style: Theme.of(context).textTheme.headlineMedium,
                       ),
                       const SizedBox(height: 10),

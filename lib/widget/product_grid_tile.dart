@@ -27,7 +27,7 @@ class ProductGridTile extends StatelessWidget {
             product.price ?? 0, product.offerPrice ?? 0);
     return GridTile(
       header: Padding(
-        padding: const EdgeInsets.only(top: 1, right: 10, left: 10, bottom: 0),
+        padding: const EdgeInsets.only(top: 1, right: 0, left: 10, bottom: 0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -36,25 +36,29 @@ class ProductGridTile extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Colors.white,
+                  color: AppColor.halloween,
                 ),
-                width: 80,
-                height: 20,
+                width: 55,
+                height: 15,
                 alignment: Alignment.center,
                 child: Text(
                   "${discountPercentage.toInt()}% OFF",
-                  style: const TextStyle(fontWeight: FontWeight.w600),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: AppColor.branco,
+                      fontSize: 10),
                 ),
               ),
             ),
             Consumer<FavoriteProvider>(
               builder: (context, favoriteProvider, child) {
                 return IconButton(
+                  style: ButtonStyle(iconSize: WidgetStatePropertyAll(20)),
                   icon: Icon(
                     Icons.favorite,
                     color:
                         favoriteProvider.checkIsItemFavorite(product.sId ?? '')
-                            ? AppColor.pretoAssombroso
+                            ? AppColor.halloween
                             : AppColor.platinado,
                   ),
                   onPressed: () {
@@ -95,7 +99,7 @@ class ProductGridTile extends StatelessWidget {
               ),
               const SizedBox(
                   height:
-                      4), // Um espacinho entre o nome da empresa e o produto
+                      2), // Um espacinho entre o nome da empresa e o produto
               Text(
                 product.name ?? '',
                 overflow:
@@ -139,9 +143,9 @@ class ProductGridTile extends StatelessWidget {
                           : NumberFormat.simpleCurrency(locale: 'pt_BR')
                               .format(product.price),
                       style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
+                        color: AppColor.halloween,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 15,
                       ),
                     ),
                   ),
@@ -152,9 +156,9 @@ class ProductGridTile extends StatelessWidget {
         ),
       ),
       child: Container(
-        padding: const EdgeInsets.fromLTRB(10, 0, 10, 80),
+        padding: const EdgeInsets.fromLTRB(10, 25, 10, 80),
         decoration: BoxDecoration(
-          color: AppColor.platinado,
+          color: AppColor.branco,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Center(

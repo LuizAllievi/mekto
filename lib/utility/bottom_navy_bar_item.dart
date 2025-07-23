@@ -10,5 +10,5 @@ class BottomNavyBarItem {
   final Color inActiveColor;
 
   const BottomNavyBarItem(this.title, this.icon, this.activeColor,
-      [this.inActiveColor = AppColor.lightBlue]);
+      [this.inActiveColor = AppColor.prateado]);
 }

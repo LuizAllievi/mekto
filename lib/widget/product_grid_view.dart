@@ -54,7 +54,7 @@ class _ProductGridViewState extends State<ProductGridView> {
         !loading.value) {
       _scrollToEndCount++; // ✅ ADICIONADO
 
-      if (_scrollToEndCount >= 6 && !_showHelpBanner) {
+      if (_scrollToEndCount >= 5 && !_showHelpBanner) {
         setState(() {
           _showHelpBanner = true;
           _scrollToEndCount = 0;
@@ -105,7 +105,7 @@ class _ProductGridViewState extends State<ProductGridView> {
           SingleChildScrollView(
             controller: _scrollController,
             child: Padding(
-              padding: const EdgeInsets.all(0),
+              padding: const EdgeInsets.all(6),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -115,14 +115,16 @@ class _ProductGridViewState extends State<ProductGridView> {
                           (context.userProvider.getLoginUsr()?.name ?? ''),
                       style: const TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: 20,
+                          fontSize: 18,
                           color: AppColor.pretoAssombroso),
                     ),
                   if (widget.loadHome)
                     const Text(
                       "Qual peça você precisa hoje?",
                       style: TextStyle(
-                          fontWeight: FontWeight.w600, color: AppColor.branco),
+                          fontWeight: FontWeight.w600,
+                          color: AppColor.cinzaDavys,
+                          fontSize: 12),
                     ),
                   AnimatedBuilder(
                     animation: productListProvider,
@@ -137,7 +139,7 @@ class _ProductGridViewState extends State<ProductGridView> {
                               physics: const NeverScrollableScrollPhysics(),
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
-                                childAspectRatio: 10 / 18,
+                                childAspectRatio: 12 / 18,
                                 crossAxisCount: 2,
                                 mainAxisSpacing: 10,
                                 crossAxisSpacing: 10,

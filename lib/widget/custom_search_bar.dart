@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mekto/utility/app_color.dart';
 
 class CustomSearchBar extends StatefulWidget {
   final TextEditingController controller;
@@ -38,7 +39,11 @@ class CustomSearchBarState extends State<CustomSearchBar> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: isExpanded ? Colors.white : Colors.grey[200],
+          border: Border.all(
+            color: AppColor.branco, // Substitua pela cor desejada
+            width: 2, // Espessura da borda
+          ),
+          color: isExpanded ? AppColor.branco : AppColor.branco,
         ),
         height: 50,
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -46,7 +51,10 @@ class CustomSearchBarState extends State<CustomSearchBar> {
           node: FocusScopeNode(),
           child: Row(
             children: [
-              const Icon(Icons.search),
+              const Icon(
+                Icons.search,
+                color: AppColor.halloween,
+              ),
               const SizedBox(width: 10),
               Expanded(
                 child: TextField(

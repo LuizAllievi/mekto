@@ -18,7 +18,8 @@ void showCustomBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
     builder: (context) {
-      return Padding(
+      return SafeArea(
+          child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Form(
           key: context.cartProvider.buyNowFormKey,
@@ -142,7 +143,8 @@ void showCustomBottomSheet(BuildContext context) {
                         hintText: cartProvider.selectedPaymentOption,
                         items: const ['pagar_na_entrega'],
                         onChanged: (val) {
-                          cartProvider.selectedPaymentOption = val ?? 'pago';
+                          cartProvider.selectedPaymentOption =
+                              val ?? 'pagar_na_entrega';
                           cartProvider.updateUI();
                         },
                         displayItem: (val) => val);
@@ -229,7 +231,7 @@ void showCustomBottomSheet(BuildContext context) {
             ),
           ),
         ),
-      );
+      ));
     },
     isScrollControlled: true,
   );

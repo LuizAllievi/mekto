@@ -28,7 +28,7 @@ class CartListSection extends StatelessWidget {
               margin: const EdgeInsets.all(8), // reduzido
               padding: const EdgeInsets.all(10), // reduzido
               decoration: BoxDecoration(
-                color: AppColor.platinado,
+                color: AppColor.branco,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
@@ -62,7 +62,8 @@ class CartListSection extends StatelessWidget {
                         Text(
                           'Valor: ${NumberFormat.simpleCurrency(locale: 'pt_BR').format(cartItem.variants.safeElementAt(0)?.price)}',
                           style: const TextStyle(
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w500,
+                            color: AppColor.halloween,
                             fontSize: 13,
                           ),
                         ),

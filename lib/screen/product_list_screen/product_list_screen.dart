@@ -10,9 +10,9 @@ class ProductListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
         appBar: CustomAppBar(),
-        backgroundColor: AppColor.halloween,
+        backgroundColor: AppColor.platinado2,
         body: Padding(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
             child: ProductGridView(loadHome: true)));
   }
 }

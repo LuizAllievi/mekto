@@ -19,14 +19,14 @@ class CartScreen extends StatelessWidget {
       context.cartProvider.getCartItems();
     });
     return Scaffold(
-      backgroundColor: AppColor.halloween,
+      backgroundColor: AppColor.platinado2,
       appBar: AppBar(
         title: const Text(
           "Meu Carrinho",
           style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: AppColor.branco),
+              color: AppColor.pretoAssombroso),
         ),
       ),
       body: Consumer<CartProvider>(
@@ -53,25 +53,24 @@ class CartScreen extends StatelessWidget {
                     const Text(
                       "Total",
                       style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w900,
-                          color: AppColor.branco),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: AppColor.halloween),
                     ),
                     AnimatedSwitcherWrapper(
                       child: Text(
                         NumberFormat.simpleCurrency(locale: 'pt_BR')
                             .format(context.cartProvider.getCartSubTotal()),
                         style: const TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w900,
-                          color: AppColor.branco,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: AppColor.halloween,
                         ),
                       ),
                     )
                   ],
                 ),
               ),
-              //? buy now button
 
               if (!context.cartProvider.myCartItems.isEmpty)
                 SizedBox(
