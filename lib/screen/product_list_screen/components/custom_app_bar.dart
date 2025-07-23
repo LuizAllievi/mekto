@@ -1,7 +1,9 @@
 import 'package:mekto/main.dart';
+import 'package:mekto/utility/app_color.dart';
 import 'package:mekto/utility/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:mekto/widget/no_product_found_banner.dart';
 import '../../../models/user.dart';
 import '../../../utility/constants.dart';
 import '../../../widget/app_bar_action_button.dart';
@@ -18,39 +20,60 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     context.productListProvider.emptyProducts();
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // AppBarActionButton(
-            //   icon: Icons.menu,
-            //   onPressed: () {
-            //     final box = GetStorage();
-            //     Map<String,dynamic>? userJson = box.read(USER_INFO_BOX);
-            //     User? userLogged = User.fromJson(userJson ?? {});
-            //     Scaffold.of(context).openDrawer();
-            //   },
-            // ),
-            Expanded(
-              child: CustomSearchBar(
-                controller: TextEditingController(),
-                onChanged: (val) {
-                  context.productListProvider.emptyProducts();
-                  if (val == '') {
-                    print("empty custom app bar");
-
-                    context.productListProvider.setQuering(false);
-                    context.productListProvider.getProducts();
-                  } else {
-                    context.productListProvider.setQuering(true);
-                    context.productListProvider.getProductsByQuery(val);
-                  }
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: FractionallySizedBox(
+                  widthFactor: 1,
+                  child: CustomSearchBar(
+                    controller: TextEditingController(),
+                    onChanged: (val) {
+                      context.productListProvider.emptyProducts();
+                      if (val == '') {
+                        context.productListProvider.setQuering(false);
+                        context.productListProvider.getProducts();
+                      } else {
+                        context.productListProvider.setQuering(true);
+                        context.productListProvider.getProductsByQuery(val);
+                      }
+                    },
+                  ),
+                ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.help),
+                color: AppColor.branco,
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    barrierDismissible: true,
+                    builder: (_) {
+                      return Stack(
+                        children: [
+                          Positioned.fill(
+                            child: Center(
+                              child: Material(
+                                elevation: 12,
+                                borderRadius: BorderRadius.circular(12),
+                                child: NoProductFoundBanner(
+                                  onClose: () {
+                                    Navigator.of(context)
+                                        .pop(); // Fecha o banner
+                                  },
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 },
               ),
-            ),
-          ],
-        ),
-      ),
+            ],
+          )),
     );
   }
 }

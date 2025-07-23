@@ -72,25 +72,27 @@ class CartScreen extends StatelessWidget {
                 ),
               ),
               //? buy now button
-              SizedBox(
-                width: double.infinity,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(left: 30, right: 30, bottom: 20),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.all(20),
-                        backgroundColor: AppColor.branco),
-                    onPressed: context.cartProvider.myCartItems.isEmpty
-                        ? null
-                        : () {
-                            showCustomBottomSheet(context);
-                          },
-                    child: const Text("Comprar Agora",
-                        style: TextStyle(color: AppColor.halloween)),
+
+              if (!context.cartProvider.myCartItems.isEmpty)
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(left: 30, right: 30, bottom: 20),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.all(20),
+                          backgroundColor: AppColor.branco),
+                      onPressed: context.cartProvider.myCartItems.isEmpty
+                          ? null
+                          : () {
+                              showCustomBottomSheet(context);
+                            },
+                      child: const Text("Comprar Agora",
+                          style: TextStyle(color: AppColor.halloween)),
+                    ),
                   ),
-                ),
-              )
+                )
 
               //? total price section
 

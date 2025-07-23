@@ -140,7 +140,7 @@ void showCustomBottomSheet(BuildContext context) {
                     return CustomDropdown<String>(
                         bgColor: Colors.white,
                         hintText: cartProvider.selectedPaymentOption,
-                        items: const ['pagar_na_entrega', 'pago'],
+                        items: const ['pagar_na_entrega'],
                         onChanged: (val) {
                           cartProvider.selectedPaymentOption = val ?? 'pago';
                           cartProvider.updateUI();
